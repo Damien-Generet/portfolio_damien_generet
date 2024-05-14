@@ -11,12 +11,23 @@ import { BrowserRouter } from "react-router-dom";
 import { Route } from "react-router-dom";
 import { Routes } from "react-router-dom";
 import ToggleTheme from "./effects/ToggleTheme";
+import MouseParticles from "react-mouse-particles";
 
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     
     <>
+     <MouseParticles
+          g={0.5}
+          num={1}
+          radius={1}
+          life={5}
+          v={0}
+          color="var(--primary-color)"
+          alpha={2}
+          level={1}
+        />
     <BrowserRouter>
         <Background />
         <header>
