@@ -2,19 +2,38 @@
 @import 'animation';
 
 // CSS FOR THE CURSOR AND THE HALOLIGHT EFFECT
-.cursor {
-     position: fixed;
-     width: 20px;
-     height: 20px;
-     border-radius: 50%;
-     background: rgb(11,42,116);
-     background: radial-gradient(circle, rgba(4, 231, 125, 0.082) 50%, var(--primary-color));
-     opacity: 0.9;
-     backdrop-filter: invert(100%);
-     z-index: 999;
-     pointer-events: none;
-     transition: scale 0.2s;
-  }
+.cursor,
+.cursor2{
+	position: fixed;
+	border-radius: 50%;	
+	transform: translateX(-50%) translateY(-50%);
+	pointer-events: none;
+	left: -100px;
+	top: 50%
+}
+.cursor{
+	height: 0;
+	width: 0;
+	z-index: 99999;
+}
+.cursor2{
+	height: 36px;
+	width: 36px;
+	z-index:99998;
+	-webkit-transition:all 0.3s ease-out;
+	transition:all 0.3s ease-out
+}
+.cursor2{
+	border: 3px solid #fff;
+	box-shadow: 0 0 22px rgba(255, 255, 255, 0.6);
+}
+.cursor2.hover{
+	-webkit-transform:scale(2) translateX(-25%) translateY(-25%);
+	transform:scale(2) translateX(-25%) translateY(-25%);
+	border:none;
+	background: rgba(255,255,255,.1);
+	box-shadow: 0 0 14px rgba(255, 255, 255, 0.3);
+}
 
   .halo{
     position: fixed;
@@ -30,7 +49,13 @@
 // VALEUR GENERALE
 
 
+a{
+    color: var(--link-color);
 
+    &:hover{
+        color: var(--secondary-color);
+    }
+}
 
 
 
@@ -42,10 +67,6 @@ body{
     font-weight: lighter;
     letter-spacing: 2px;
     word-spacing: 2px;
-
-    & a{
-        color: var(--link-color);
-    }
 
     & h1, h2, h3, h4, h5, h6 {
         font-weight: 400;
@@ -220,6 +241,7 @@ body{
         width: 28px;
         height: 28px;
         color: var(--font-color);
+        cursor: pointer;
     }
 }
 
@@ -268,7 +290,7 @@ nav{
             }
 
             &:hover > a{
-                color: var(--primary-color);
+                color: var(--secondary-color);
                 transition: 0.2s;
             }
 
@@ -294,6 +316,23 @@ nav{
 }
 
 
+.media-logo{
+
+    & a svg{
+        width: 28px;
+        height: 28px;
+        color: var(--primary-color);
+        margin: 5px;
+        scale: 1;
+        transition: 0.2s;
+
+        &:hover{
+            color: var(--secondary-color);
+            scale: 1.1;
+            transition: 0.2s;
+        }
+    }
+}
 
 main{
 
@@ -315,7 +354,7 @@ main{
 
 
         & .mainTitle{
-            font-size: 4em;
+            font-size: $h1-size;
             margin: none;
             color: var(--font-color);
             margin: 0px;
@@ -386,28 +425,32 @@ main{
 
     & .presentationContainer{
         position: absolute;
-        width: 690vw;
+        width: 90%;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
         display: flex;
-        justify-content: space-around;
-        flex-direction: column;
+        justify-content: center;
         align-items: center;
+        gap: 2em;
+
+        & .text-presentation{
+            width: 50%;
+        }
 
         & h1{
-            font-size: 3em;
+            font-size: $h1-size;;
         }
 
             & p{
-                width: 50%;
-                font-size: 2em;
+                font-size: 1.5em;
+                text-align: justify;
             }
 
             & .profilePicture{
-                width: 500px;
-                height: 500px;
-                border-radius: 50%;
+                margin-top: 5%;
+                width: 450px;
+                height: 550px;
                 background-image: url(../../public/damien.jpeg);
                 background-repeat: no-repeat;
                 box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.308);
@@ -415,11 +458,6 @@ main{
                 background-size: 200%;
                 transition: background-image 0.5s;
     
-            }
-
-            & span{
-                color: var(--primary-color);
-                font-weight: 700;
             }
     }
 
@@ -586,6 +624,71 @@ main{
     border: solid 2px var(--primary-color);
 }
 
+}
+
+& .contact-container{
+    width: 60%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+
+    & h1{
+        font-size: $h1-size;
+    }
+
+    & form {
+        max-width: 100%;
+        background-color: var(--blur-bg);
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+
+        & .input-part{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+       
+      & div textarea, input {
+          border:0; outline:0;
+          margin: 5px;
+          display: block;
+          width: 100%;
+          resize: none;
+         
+       }
+       
+       #input-submit {
+          color: var(--font-color);
+          background-color: var(--primary-color);
+          padding: 5px;
+          width: 150px;
+          height: 30px;
+          font-size: 1em;
+          border: 1px solid var(--secondary-color);
+          box-shadow: 1px 1px 5px var(--blur-dark-bg);
+          cursor: pointer;
+          margin: auto;
+          transition: 0.2s;
+
+          &:hover{
+            background-color: var(--secondary-color);
+            transition: 0.2s;
+          }
+         
+       }
+       
+       textarea {
+           height: 126px;
+       }
+     }
 }
 }
 

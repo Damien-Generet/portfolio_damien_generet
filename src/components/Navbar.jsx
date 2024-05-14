@@ -1,8 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { changeScale } from "../effects/PointerEffect";
 import { Link } from "react-router-dom";
-import { MoonIcon, PlayIcon, SunIcon } from "@radix-ui/react-icons";
+import { EnvelopeClosedIcon, GitHubLogoIcon, LinkedInLogoIcon, MoonIcon, PlayIcon, SunIcon } from "@radix-ui/react-icons";
 
 
 
@@ -15,18 +14,6 @@ const Navbar = () => {
     setActiveLink(link);
   };
 
-  const [isHovered, setIsHovered] = useState(false);
-  const changeStateHovering = () => {
-    setIsHovered(!isHovered);
-  };
-
-  useEffect(() => {
-    if (isHovered) {
-      changeScale(2);
-    } else {
-      changeScale(1);
-    }
-  }, [changeStateHovering]);
 
 
 
@@ -48,8 +35,6 @@ const Navbar = () => {
     <nav style={isOpen ? {transform: 'translateX(0%)'} : {transform: 'translateX(-100%)'}}>
       <ul className="navbar">
         <li
-          onPointerEnter={changeStateHovering}
-          onPointerLeave={changeStateHovering}
           className="nav"
         >
           <PlayIcon className="triangle-list" />
@@ -62,8 +47,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li
-          onPointerEnter={changeStateHovering}
-          onPointerLeave={changeStateHovering}
+         
           className="nav"
         >
         <PlayIcon className="triangle-list" />
@@ -76,8 +60,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li
-          onPointerEnter={changeStateHovering}
-          onPointerLeave={changeStateHovering}
+        
           className="nav"
         >
         <PlayIcon className="triangle-list" />
@@ -90,8 +73,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li
-          onPointerEnter={changeStateHovering}
-          onPointerLeave={changeStateHovering}
+        
           className="nav"
         >
         <PlayIcon className="triangle-list" />
@@ -104,6 +86,19 @@ const Navbar = () => {
           </Link>
         </li>
       </ul>
+      <div>
+      <div className="media-logo">
+            <a href="https://github.com/Damien-Generet"><GitHubLogoIcon /></a>
+            <a href="https://www.linkedin.com/in/damiengeneret/"><LinkedInLogoIcon /></a>
+            <a href="mailto:damiengeneret@outlook.com"><EnvelopeClosedIcon /></a>
+          </div>
+
+          <div className="media-link">
+          <p>
+          <a href="#">Malt</a> | <a href="#">Fiverr</a>
+          </p>
+          </div>
+      </div>
     </nav>
     </>
   );

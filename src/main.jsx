@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from 'react-dom';
 import './style/App.scss';
-import PointerEffect from "../src/effects/PointerEffect";
 import Navbar from "./components/Navbar";
 import Index from "./pages/Index";
 import Background from "./effects/Background";
 import Projects from "./pages/Projects";
 import Presentation from "./pages/Presentation";
+import Contact from "./pages/Contact";
 import { BrowserRouter } from "react-router-dom";
 import { Route } from "react-router-dom";
 import { Routes } from "react-router-dom";
@@ -18,7 +18,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     
     <>
     <BrowserRouter>
-        <PointerEffect />
         <Background />
         <header>
             <Navbar />
@@ -29,6 +28,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                 <Route path="/" element={<Index />} />
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/about" element={<Presentation />} />
+                <Route path="/contact" element={<Contact />} />
         </Routes>
           
         </main>

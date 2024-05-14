@@ -1,30 +1,15 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import Typewriter from "typewriter-effect";
-import { changeScale } from "../effects/PointerEffect";
 import { ArrowDownIcon } from "@radix-ui/react-icons";
 import "../style/App.scss";
 
 const Index = () => {
-  const [isHovered, setIsHovered] = useState(false);
-  const changeStateHovering = () => {
-    setIsHovered(!isHovered);
-  };
-
-  useEffect(() => {
-    if (isHovered) {
-      changeScale(2);
-    } else {
-      changeScale(1);
-    }
-  }, [changeStateHovering]);
+  
 
   return (
     <>
       <div className="titleContainer">
         <div
-          onPointerEnter={changeStateHovering}
-          onPointerLeave={changeStateHovering}
+        
         >
           <p>Hi, i'm</p>
           <h1 className="mainTitle">
