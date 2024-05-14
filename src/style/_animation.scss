@@ -1,0 +1,38 @@
+@mixin underline-link {
+    color: $font-color;
+    display: inline-block;
+    transition: 0.3s;
+    &:visited{
+        color: white;
+    }
+
+    &:hover{
+        color: $primary-color;
+        text-shadow: 3px 3px 5px $fourth-color;
+        transition: 0.3s;
+    }
+    
+     &:active{
+        color: $tertiary-color;
+        transition: 0.1s;
+    }
+
+    &:after {    
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: relative;
+        background: $primary-color;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+      }
+      &:hover:after { 
+        width: 100%; 
+        left: 0; 
+      }
+}
+
+
