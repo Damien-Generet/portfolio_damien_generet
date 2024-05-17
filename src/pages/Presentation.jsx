@@ -1,6 +1,9 @@
 import React from "react";
 import { InView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
+import transition from "../effects/transition";
+import { Link } from "react-router-dom";
+import { ArrowDownIcon } from "@radix-ui/react-icons";
 
 const Presentation = () => {
 
@@ -67,6 +70,12 @@ const Presentation = () => {
             , and now I'm at your service, fully confident that succes<span className="span-green"> you won't regret
             it! </span>
           </p>
+          <div className="arrow-link">
+            <Link to="/contact" className="link">
+                <p>Contact me !</p>
+                <ArrowDownIcon className="arrow" />
+            </Link>
+            </div>
         </div>
         <div
           className="profilePicture"
@@ -77,4 +86,4 @@ const Presentation = () => {
   );
 };
 
-export default Presentation;
+export default transition(Presentation);

@@ -1,5 +1,8 @@
+import { Link } from "react-router-dom";
 import React from "react";
 import { useState, useEffect } from "react";
+import transition from "../effects/transition";
+import { ArrowDownIcon, ArrowUpIcon } from "@radix-ui/react-icons";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -32,13 +35,18 @@ const Projects = () => {
           </p>
         </div>
         <div className="card-container">
-
         <div className="card">
                 <div className="card-title">
                   <h3>BE THE NEXT ONE</h3>
                 </div>
                 <div className="card-content">
                   <h3>YOUR PROJECT CAN BE REAL</h3>
+                  <div className="arrow-link">
+            <Link to="/about" className="link">
+                <p>About me</p>
+                <ArrowDownIcon className="arrow" />
+            </Link>
+            </div>
                   <p>Ready to elevate your project to new heights? Let's bring your <span className='span-green'>idea</span> to life together!</p>
                 </div>
                 <div className="line"></div>
@@ -68,4 +76,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default transition(Projects);

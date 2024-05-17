@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { EnvelopeClosedIcon, GitHubLogoIcon, LinkedInLogoIcon, MoonIcon, PlayIcon, SunIcon } from "@radix-ui/react-icons";
+import { EnvelopeClosedIcon, GitHubLogoIcon, LinkedInLogoIcon, MoonIcon, PlayIcon, SunIcon, ArrowUpIcon } from "@radix-ui/react-icons";
 
 
 
@@ -100,6 +100,12 @@ const Navbar = () => {
           </div>
       </div>
     </nav>
+    <div className="arrow-link home-link">
+            <Link to="/" className="link">
+                <p>Home</p>
+                <ArrowUpIcon className="arrow" />
+            </Link>
+            </div>
     </>
   );
 };

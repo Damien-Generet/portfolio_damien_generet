@@ -4,6 +4,8 @@ import {
   EnvelopeClosedIcon,
 } from "@radix-ui/react-icons";
 import React from "react";
+import transition from "../effects/transition";
+
 
 const Contact = () => {
   return (
@@ -61,4 +63,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default transition(Contact);

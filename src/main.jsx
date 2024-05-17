@@ -12,7 +12,8 @@ import { Route } from "react-router-dom";
 import { Routes } from "react-router-dom";
 import ToggleTheme from "./effects/ToggleTheme";
 import MouseParticles from "react-mouse-particles";
-
+import { AnimatePresence } from "framer-motion";
+import Links from "./components/Links";
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -35,12 +36,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </header>
         <main>
         <ToggleTheme />
-            <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/about" element={<Presentation />} />
-                <Route path="/contact" element={<Contact />} />
+        <AnimatePresence mode="wait">
+        <Routes>
+             <Route path="/*" element={<Links />} />
         </Routes>
+        </AnimatePresence>
           
         </main>
     </BrowserRouter>

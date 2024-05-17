@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 
 const ToggleTheme = () => {
-  const [darkTheme, setDarkTheme] = useState(false);
+  const savedTheme = localStorage.getItem("darkTheme") === "true"; // Ajout
+  const [darkTheme, setDarkTheme] = useState(savedTheme);
 
   useEffect(() => {
-    // Définir les variables de couleur en fonction du thème
     const root = document.documentElement;
     root.style.setProperty("--primary-color", darkTheme ? "#22B96B" : "#E54D2E");
     root.style.setProperty("--secondary-color", darkTheme ? "#205937" : "#FDBDAE");
@@ -16,11 +16,13 @@ const ToggleTheme = () => {
     root.style.setProperty("--gradient-b", darkTheme ? "rgba(23,43,29,1) 100%" : "rgba(255,252,252,1) 100%");
     root.style.setProperty("--blur-bg", darkTheme ? "rgba(255, 255, 255, 0.055)" : "rgba(165, 165, 165, 0.116)");
     root.style.setProperty("--blur-dark-bg", darkTheme ? "rgba(255, 255, 255, 0.055)" : "rgba(165, 165, 165, 0.116)");
+
+    localStorage.setItem("darkTheme", darkTheme); // Ajout
   }, [darkTheme]);
 
   return (
     <div className="toogle-theme" onClick={() => setDarkTheme(prevTheme => !prevTheme)}>
-      {darkTheme == true ? (
+      {darkTheme === true ? (
         <SunIcon className="logo-theme" />
       ) : (
         <MoonIcon className="logo-theme" />

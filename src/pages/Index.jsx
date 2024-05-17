@@ -1,6 +1,8 @@
 import React from "react";
 import { ArrowDownIcon } from "@radix-ui/react-icons";
 import "../style/App.scss";
+import transition from "../effects/transition";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   
@@ -38,10 +40,10 @@ const Index = () => {
                 </ul>
             </div>
             <div className="arrow-link">
-            <p className="span-green">My projects</p>
-            <a href="./Competences">
+            <Link to="/projects" className="link">
+                <p>My projects</p>
                 <ArrowDownIcon className="arrow" />
-            </a>
+            </Link>
             </div>
         </div>
       </div>
@@ -49,4 +51,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default transition(Index);
