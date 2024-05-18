@@ -41,7 +41,7 @@ const Navbar = () => {
           <Link
             className={activeLink === "Home" ? "active" : ""}
             to="/"
-            onClick={() => handleLinkClick("Home")}
+            onClick={() => {handleLinkClick("Home"); openMenu()}}
           >
            Home
           </Link>
@@ -54,7 +54,7 @@ const Navbar = () => {
           <Link
             className={activeLink === "Projets" ? "active" : ""}
             to="/projects"
-            onClick={() => handleLinkClick("Projets")}
+            onClick={() => {handleLinkClick("Projets"); openMenu()}} 
           >
             Projects
           </Link>
@@ -67,7 +67,7 @@ const Navbar = () => {
           <Link
             className={activeLink === "about" ? "active" : ""}
             to="/about"
-            onClick={() => handleLinkClick("about")}
+            onClick={() => {handleLinkClick("about"); openMenu()}}
           >
             About
           </Link>
@@ -80,7 +80,7 @@ const Navbar = () => {
           <Link
             className={activeLink === "contact" ? "active" : ""}
             to="/contact"
-            onClick={() => handleLinkClick("contact")}
+            onClick={() => {handleLinkClick("contact"); openMenu()}}
           >
             Contact
           </Link>
