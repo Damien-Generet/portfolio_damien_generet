@@ -70,11 +70,8 @@ const Projects = () => {
                 <span className="span-green">idea</span> to life together!
               </p>
             </div>
-            <div className="line"></div>
           </div>
-        </div>
-        <div className="wizard">
-          <h3>WEB WIZARD AT YOUR SERVICE !</h3>
+          <div className="line-end-project"></div>
         </div>
       </div>
       {selectedProject && (

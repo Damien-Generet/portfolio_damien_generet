@@ -460,13 +460,14 @@ main {
   & .presentationContainer {
     width: 90%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2em;
-    margin-top: 3em;
+    gap: 1em;
+    margin-top: 1em;
 
     & .text-presentation {
-      width: 50%;
+      width: 80%;
     }
 
     & h1 {
@@ -549,6 +550,14 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 3em;
+
+    & .line-end-project{
+      width: 2px;
+      background-color: var(--primary-color); /* Couleur de la ligne */
+      height: 6em; /* Hauteur de la ligne */
+      position: relative;
+      left: 50%;
+    }
 
     & .title-project_page {
       & p {
