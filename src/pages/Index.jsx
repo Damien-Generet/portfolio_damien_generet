@@ -1,15 +1,17 @@
-import React from "react";
-import { ArrowDownIcon } from "@radix-ui/react-icons";
+/* eslint-disable react/no-unescaped-entities */
 import "../style/App.scss";
-import transition from "../effects/transition";
-import { Link } from "react-router-dom";
+import Projects from "./Projects";
+import Presentation from "./Presentation";
+import Contact from "./Contact";
+import IntersectionCV from "../components/IntersectionCV";
+
 
 const Index = () => {
   
 
   return (
     <>
-      <div className="titleContainer">
+      <div className="titleContainer" id="Home">
         <div
         
         >
@@ -20,8 +22,11 @@ const Index = () => {
           <h2 className="second-title">A web developer.</h2>
         </div>
         <div className="small-about">
+          <p>
           Unlock the <span className="span-green">power</span> of your online <span className="span-green">presence</span> ! Let's craft stunning
           websites that not only <span className="span-green">captivate</span> your audience but also drive your <span className="span-green">business</span> to new heights of <span className="span-green">success</span> !
+          </p>
+
         </div>
         <div className="title-bottom">
             <div>
@@ -39,16 +44,14 @@ const Index = () => {
                     <li className="tag-competences">THREE.js</li>
                 </ul>
             </div>
-            <div className="arrow-link">
-            <Link to="/projects" className="link">
-                <p>My projects</p>
-                <ArrowDownIcon className="arrow" />
-            </Link>
-            </div>
         </div>
       </div>
+      <IntersectionCV />
+      <Projects />
+      <Presentation />
+      <Contact />
     </>
   );
 };
 
-export default transition(Index);
+export default Index;

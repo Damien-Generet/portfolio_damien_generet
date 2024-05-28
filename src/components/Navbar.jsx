@@ -1,111 +1,116 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { EnvelopeClosedIcon, GitHubLogoIcon, LinkedInLogoIcon, MoonIcon, PlayIcon, SunIcon, ArrowUpIcon } from "@radix-ui/react-icons";
-
-
-
-
+import { useState } from "react";
+import {
+  EnvelopeClosedIcon,
+  GitHubLogoIcon,
+  LinkedInLogoIcon,
+  PlayIcon,
+  ArrowUpIcon,
+} from "@radix-ui/react-icons";
+import { handleLinkClick } from "./utils";
 
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState("");
 
-  const handleLinkClick = (link) => {
-    setActiveLink(link);
-  };
-
-
-
-
   const [isOpen, setIsOpen] = useState(false);
   const openMenu = () => {
-    setIsOpen(!isOpen)
-  }
- 
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
-     <div className="header-menu" onClick={openMenu}>
+      <div className="header-menu" onClick={openMenu}>
         <p>MENU</p>
-        <div className={isOpen ? 'hamburger-menu open' : 'hamburger-menu'}>
+        <div className={isOpen ? "hamburger-menu open" : "hamburger-menu"}>
           <span></span>
           <span></span>
           <span></span>
         </div>
       </div>
-    <nav style={isOpen ? {transform: 'translateX(0%)'} : {transform: 'translateX(-100%)'}}>
-      <ul className="navbar">
-        <li
-          className="nav"
-        >
-          <PlayIcon className="triangle-list" />
-          <Link
-            className={activeLink === "Home" ? "active" : ""}
-            to="/"
-            onClick={() => {handleLinkClick("Home"); openMenu()}}
-          >
-           Home
-          </Link>
-        </li>
-        <li
-         
-          className="nav"
-        >
-        <PlayIcon className="triangle-list" />
-          <Link
-            className={activeLink === "Projets" ? "active" : ""}
-            to="/projects"
-            onClick={() => {handleLinkClick("Projets"); openMenu()}} 
-          >
-            Projects
-          </Link>
-        </li>
-        <li
-        
-          className="nav"
-        >
-        <PlayIcon className="triangle-list" />
-          <Link
-            className={activeLink === "about" ? "active" : ""}
-            to="/about"
-            onClick={() => {handleLinkClick("about"); openMenu()}}
-          >
-            About
-          </Link>
-        </li>
-        <li
-        
-          className="nav"
-        >
-        <PlayIcon className="triangle-list" />
-          <Link
-            className={activeLink === "contact" ? "active" : ""}
-            to="/contact"
-            onClick={() => {handleLinkClick("contact"); openMenu()}}
-          >
-            Contact
-          </Link>
-        </li>
-      </ul>
-      <div>
-      <div className="media-logo">
-            <a href="https://github.com/Damien-Generet"><GitHubLogoIcon /></a>
-            <a href="https://www.linkedin.com/in/damiengeneret/"><LinkedInLogoIcon /></a>
-            <a href="mailto:damiengeneret@outlook.com"><EnvelopeClosedIcon /></a>
+      <nav
+        style={
+          isOpen
+            ? { transform: "translateX(0%)" }
+            : { transform: "translateX(-100%)" }
+        }
+      >
+        <ul className="navbar">
+          <li className="nav">
+            <PlayIcon className="triangle-list" />
+            <a
+              className={activeLink === "Home" ? "active" : ""}
+              href="/#Home"
+              onClick={() => handleLinkClick("Home", setActiveLink, openMenu)}
+            >
+              Home
+            </a>
+          </li>
+          <li className="nav">
+            <PlayIcon className="triangle-list" />
+            <a
+              className={activeLink === "Projects" ? "active" : ""}
+              href="/#Projects"
+              onClick={() =>
+                handleLinkClick("Projects", setActiveLink, openMenu)
+              }
+            >
+              Projects
+            </a>
+          </li>
+          <li className="nav">
+            <PlayIcon className="triangle-list" />
+            <a
+              className={activeLink === "About" ? "active" : ""}
+              href="#About"
+              onClick={() => handleLinkClick("About", setActiveLink, openMenu)}
+            >
+              About
+            </a>
+          </li>
+          <li className="nav">
+            <PlayIcon className="triangle-list" />
+            <a
+              className={activeLink === "Contact" ? "active" : ""}
+              href="#Contact"
+              onClick={() =>
+                handleLinkClick("Contact", setActiveLink, openMenu)
+              }
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+        <div>
+          <div className="media-logo">
+            <a href="https://github.com/Damien-Generet">
+              <GitHubLogoIcon />
+            </a>
+            <a href="https://www.linkedin.com/in/damiengeneret/">
+              <LinkedInLogoIcon />
+            </a>
+            <a href="mailto:damiengeneret@outlook.com">
+              <EnvelopeClosedIcon />
+            </a>
           </div>
 
           <div className="media-link">
-          <p>
-          <a href="#">Malt</a> | <a href="#">Fiverr</a>
-          </p>
+            <p>
+              <a href="#">Malt</a> | <a href="#">Fiverr</a>
+            </p>
           </div>
+        </div>
+      </nav>
+      <div className="arrow-link home-link">
+        <a
+          href="#Home"
+          className="link"
+          onClick={() => handleLinkClick("Home", setActiveLink, () => {})}
+        >
+          <p>Home</p>
+          <ArrowUpIcon className="arrow" />
+        </a>
       </div>
-    </nav>
-    <div className="arrow-link home-link">
-            <Link to="/" className="link">
-                <p>Home</p>
-                <ArrowUpIcon className="arrow" />
-            </Link>
-            </div>
     </>
   );
 };

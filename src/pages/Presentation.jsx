@@ -1,13 +1,9 @@
-import React from "react";
-import { InView } from "react-intersection-observer";
+/* eslint-disable react/no-unescaped-entities */
 import { useState, useEffect } from "react";
-import transition from "../effects/transition";
-import { Link } from "react-router-dom";
-import { ArrowDownIcon } from "@radix-ui/react-icons";
 
 const Presentation = () => {
 
-  const [visibleParagraphs, setVisibleParagraphs] = useState([]);
+  const [setVisibleParagraphs] = useState([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -41,11 +37,11 @@ const Presentation = () => {
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [setVisibleParagraphs]);
 
   return (
     <>
-      <div className="presentationContainer">
+      <div className="presentationContainer" id="About">
         <div className="text-presentation">
           <h1>
             ABOUT <span className="span-green">ME</span>
@@ -70,20 +66,17 @@ const Presentation = () => {
             , and now I'm at your service, fully confident that succes<span className="span-green"> you won't regret
             it! </span>
           </p>
-          <div className="arrow-link">
-            <Link to="/contact" className="link">
-                <p>Contact me !</p>
-                <ArrowDownIcon className="arrow" />
-            </Link>
-            </div>
         </div>
+        <div className="container-pictures">
         <div
           className="profilePicture"
           title="Pictures of me, Damien Generet. Nice to meet you !"
         ></div>
+        </div>
       </div>
+      <div className="line"></div>
     </>
   );
 };
 
-export default transition(Presentation);
+export default Presentation;

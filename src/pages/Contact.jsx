@@ -1,16 +1,15 @@
+/* eslint-disable react/no-unescaped-entities */
 import {
   GitHubLogoIcon,
   LinkedInLogoIcon,
   EnvelopeClosedIcon,
 } from "@radix-ui/react-icons";
-import React from "react";
-import transition from "../effects/transition";
 
 
 const Contact = () => {
   return (
     <>
-      <div className="contact-container">
+      <div className="contact-container" id="Contact">
         <h1>
           <span className="span-green">CONTACT</span> ME
         </h1>
@@ -63,4 +62,4 @@ const Contact = () => {
   );
 };
 
-export default transition(Contact);
+export default Contact;

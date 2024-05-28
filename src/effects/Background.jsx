@@ -1,10 +1,7 @@
-import React from "react";
-
 const Background = () => {
   return (
-    
     <div className="container-bg">
-       <div class="wrap">
+      <div className="wrap">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 448 1500"
@@ -53,4 +50,4 @@ const Background = () => {
   );
 };
 
-export default Background
+export default Background;
