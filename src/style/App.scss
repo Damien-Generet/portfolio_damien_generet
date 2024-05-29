@@ -74,6 +74,10 @@ a {
   }
 }
 
+
+
+
+
 body {
   margin: 0;
   box-sizing: 0;
@@ -83,6 +87,8 @@ body {
   font-weight: lighter;
   letter-spacing: 2px;
   word-spacing: 2px;
+  width: 100vw;
+  overflow-x: hidden;
 
   & h1,
   h2,
@@ -727,27 +733,30 @@ $animationDuration: 1.5s;
   & .dl_cv {
     position: relative;
     left: 25%;
+    width: 40%;
+    text-align: center;
     align-self: center;
     padding: 1em;
     background-color: var(--blur-bg);
     backdrop-filter: blur(10px);
     border: 1px solid var(--secondary-color);
     box-shadow: 1px 1px 5px var(--blur-dark-bg);
-    transition: 0.5s;
+    transition: 1s;
     opacity: 1;
   }
 
   & .cv_hidden{
     position: relative;
-    left: 15%;
+    left: 20%;
     opacity: 0;
     align-self: center;
+    width: 40%;
     padding: 1em;
     background-color: var(--blur-bg);
     backdrop-filter: blur(10px);
     border: 1px solid var(--secondary-color);
     box-shadow: 1px 1px 5px var(--blur-dark-bg);
-    transition: 0.5s;
+    transition: 1s;
   }
 
   & .intersection-relation_line{
@@ -823,5 +832,12 @@ $animationDuration: 1.5s;
 
   .profilePicture{
     display: none;
+  }
+
+  h1{
+    font-size: 3em !important;
+  }
+  h2{
+    font-size: 2em !important;
   }
 }
