@@ -187,6 +187,7 @@ polygon {
   z-index: 2;
   background-color: var(--blur-bg);
   padding: 0.5em;
+  margin-top: 10px;
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.199);
   backdrop-filter: blur(10px);
@@ -279,13 +280,13 @@ nav {
   background-color: var(--blur-bg);
   backdrop-filter: blur(10px);
   height: 100%;
-min-width: 20em;
+  min-width: 20em;
   border-right: var(--font-color) 1px solid;
   position: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: end;
   gap: 5em;
   z-index: 1;
   transform: translateX(-100%);
