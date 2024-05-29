@@ -454,8 +454,8 @@ main {
 
     & .profilePicture {
       margin-top: 5%;
-      width: 450px;
-      height: 550px;
+      width: 30vw;
+      height: 70vh;
       background-image: url(../../public/damien.jpeg);
       background-repeat: no-repeat;
       box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.308);
@@ -819,5 +819,9 @@ $animationDuration: 1.5s;
 
   .card .card-title {
     width: 90%; // Adjust title width
+  }
+
+  .profilePicture{
+    display: none;
   }
 }
