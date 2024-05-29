@@ -49,9 +49,7 @@ const Presentation = () => {
           <br />
           <p
             className="presentation">
-            Hi, I'm Damien. I'm a web developer skilled in both{" "}
-            <span className="span-green">front-end</span> and{" "}
-            <span className="span-green">back-end</span> development. I always
+            Hi, I'm Damien. I'm a web developer skilled in both <span className="span-green">front-end</span> and <span className="span-green">back-end</span> development. I always
             put my all into my projects and possess unwavering confidence. If
             you choose to work with me, I can guarantee that I will devote
             myself entirely to achieving  <span className="span-green">success</span> and meeting your expectations.
