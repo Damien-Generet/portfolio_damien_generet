@@ -48,7 +48,7 @@ const Presentation = () => {
           </h1>
           <br />
           <p
-            className="presentation_fr">
+            className="presentation">
             Hi, I'm Damien. I'm a web developer skilled in both{" "}
             <span className="span-green">front-end</span> and{" "}
             <span className="span-green">back-end</span> development. I always
