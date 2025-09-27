@@ -23,7 +23,7 @@
     "react-scroll-progress-bar": "^2.0.0",
     "react-simple-typewriter": "^5.0.1",
     "react-spring": "^9.7.3",
-    "sass": "^1.76.0",
+    "sass": "^1.92.1",
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
